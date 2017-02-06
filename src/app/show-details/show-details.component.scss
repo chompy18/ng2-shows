@@ -1,0 +1,26 @@
+.show-container {
+
+    //display: flex;
+    //flex-direction: column;
+
+    .show-image {
+        //width: 680px;
+        //height: 1000px;
+        //margin: auto;
+    }
+
+    .cast-container {
+        //display: flex;
+        //flex-flow: row wrap;
+
+    }
+}
+
+.cast-item {
+    margin: 10px;
+}
+
+.show-image {
+    max-height: 1000px;
+    margin: auto;
+}

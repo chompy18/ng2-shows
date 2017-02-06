@@ -1,0 +1,19 @@
+<div *ngIf="showStore.currentShow.image">
+    <div *mobxAutorun>
+        <div class="row">
+            <div class="col-md-5 offset-md-1">
+                <p>{{showStore.currentShow.name}}</p>
+                <p>Genres: <span *ngFor="let genre of showStore.currentShow.genres">{{genre}},</span></p>
+                <p>{{showStore.currentShow.summary | stripTags}}</p>
+
+            </div>
+            <img class="show-image" [src]="showStore.currentShow.image?.original">
+        </div>
+        <div class="row offset-md-1">
+            <div class="cast-item" *ngFor="let castMember of showStore.currentShowCast">
+                {{castMember.character.name}}<br>
+                <img [src]="castMember.character.image?.medium">
+            </div>
+        </div>
+    </div>
+</div>
