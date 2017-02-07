@@ -17,6 +17,7 @@ import { ShowResolver } from "./common/resolvers/show.resolver";
 import { ActorDetailsComponent } from "./actor-details/actor-details.component";
 import { ActorStore } from "./common/stores/actor.store";
 import { ActorService } from "./common/services/actor.service";
+import { NavComponent } from "./common/components/nav/nav.component";
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { ActorService } from "./common/services/actor.service";
         ShowListComponent,
         ShowDetailsComponent,
         SearchComponent,
-        ActorDetailsComponent
+        ActorDetailsComponent,
+        NavComponent
     ],
     imports: [
         BrowserModule,
