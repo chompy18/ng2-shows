@@ -14,13 +14,17 @@ import { ShowDetailsComponent } from "./show-details/show-details.component";
 import { TopBarStore } from "./common/stores/top-bar.store";
 import { SearchComponent } from "./search/search.component";
 import { ShowResolver } from "./common/resolvers/show.resolver";
+import { ActorDetailsComponent } from "./actor-details/actor-details.component";
+import { ActorStore } from "./common/stores/actor.store";
+import { ActorService } from "./common/services/actor.service";
 
 @NgModule({
     declarations: [
         AppComponent,
         ShowListComponent,
         ShowDetailsComponent,
-        SearchComponent
+        SearchComponent,
+        ActorDetailsComponent
     ],
     imports: [
         BrowserModule,
@@ -31,7 +35,7 @@ import { ShowResolver } from "./common/resolvers/show.resolver";
         ClarityModule.forRoot(),
         ROUTING
     ],
-    providers: [ShowStore, ShowService, TopBarStore, ShowResolver],
+    providers: [ShowStore, ShowService, TopBarStore, ShowResolver, ActorStore, ActorService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,14 @@
+<div *mobxAutorun>
+    <div class="row">
+        <div class="col-md-5 offset-md-1">
+            <p>{{actorStore.currentActor.name}}</p>
+        </div>
+        <img class="actor-image" [src]="actorStore.currentActor.image?.original">
+    </div>
+    <div class="row offset-md-1">
+        <div class="show-item" *ngFor="let show of actorStore.currentActorShows" (click)="navigate(show)">
+            {{show.name}}<br>
+            <img [src]="show.image?.medium">
+        </div>
+    </div>
+</div>

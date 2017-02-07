@@ -6,6 +6,7 @@ import { TopBarStore } from "../stores/top-bar.store";
 
 @Injectable()
 export class ShowService implements CanActivate {
+
     BASE_URL: string = 'https://api.tvmaze.com/';
 
     constructor(private http: Http,
@@ -32,8 +33,9 @@ export class ShowService implements CanActivate {
     }
 
     getShowById(showId: number): Observable<any> {
-        const url = this.BASE_URL + 'shows/' + showId + '?embed=cast';
+        const url = this.BASE_URL + 'shows/' + showId + '?embed[]=cast&embed[]=seasons';
         return this.http.get(url)
             .map(res => res.json());
     }
+
 }

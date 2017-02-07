@@ -4,6 +4,7 @@ import { ShowListComponent } from "./show-list/show-list.component";
 import { ShowDetailsComponent } from "./show-details/show-details.component";
 import { ShowResolver } from "./common/resolvers/show.resolver";
 import { ShowService } from "./common/services/show.service";
+import { ActorDetailsComponent } from "./actor-details/actor-details.component";
 
 
 export const ROUTES: Routes = [
@@ -19,6 +20,10 @@ export const ROUTES: Routes = [
         resolve: {
             show: ShowResolver
         }
+    },
+    {
+        path: 'actor/:id',
+        component: ActorDetailsComponent
     },
     {
         path: '**',

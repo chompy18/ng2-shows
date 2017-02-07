@@ -52,4 +52,9 @@ export class ShowStore {
             return castMember.character.image !== null;
         })
     }
+
+    @computed
+    get currentShowSeasons() {
+        return this.currentShow._embedded.seasons;
+    }
 }
