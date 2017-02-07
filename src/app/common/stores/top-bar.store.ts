@@ -8,7 +8,7 @@ export class TopBarStore {
     criteria: string;
 
     @observable
-    isLoggedIn: boolean = false;
+    isLoggedIn: boolean = true;
 
     @observable
     isBlocked: boolean = false;
