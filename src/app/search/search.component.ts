@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, OnInit } from "@angular/core";
-import { TopBarStore } from "../common/stores/top-bar.store";
+import { TopBarStore } from "../stores/top-bar.store";
 
 @Component({
     selector: 'search',

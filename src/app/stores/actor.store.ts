@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { ActorService } from "../services/actor.service";
 import { observable, action } from "mobx";
+import { ActorService } from "../actor-details/actor.service";
 
 @Injectable()
 export class ActorStore {

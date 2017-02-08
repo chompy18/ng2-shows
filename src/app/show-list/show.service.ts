@@ -26,12 +26,6 @@ export class ShowService implements CanActivate {
             .map(res => res.json());
     }
 
-    getShowWithCast(showName: string): Observable<any> {
-        const url = this.BASE_URL + 'singlesearch/shows?q=' + encodeURI(showName) + '&embed=cast';
-        return this.http.get(url)
-            .map(res => res.json());
-    }
-
     getShowById(showId: number): Observable<any> {
         const url = this.BASE_URL + 'shows/' + showId + '?embed[]=cast&embed[]=seasons';
         return this.http.get(url)

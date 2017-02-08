@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
-import { ShowStore } from "../common/stores/shows.store";
-import { ActorStore } from "../common/stores/actor.store";
 import { Router } from "@angular/router";
+import { ShowStore } from "../stores/shows.store";
+import { ActorStore } from "../stores/actor.store";
 
 @Component({
     selector: 'show-details',

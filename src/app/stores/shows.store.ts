@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { observable, action, computed } from "mobx";
-import { ShowService } from "../services/show.service";
 import { Observable } from "rxjs";
+import { ShowService } from "../show-list/show.service";
 
 @Injectable()
 export class ShowStore {

@@ -2,9 +2,9 @@ import { ModuleWithProviders } from "@angular/core/src/metadata/ng_module";
 import { Routes, RouterModule } from "@angular/router";
 import { ShowListComponent } from "./show-list/show-list.component";
 import { ShowDetailsComponent } from "./show-details/show-details.component";
-import { ShowResolver } from "./common/resolvers/show.resolver";
-import { ShowService } from "./common/services/show.service";
 import { ActorDetailsComponent } from "./actor-details/actor-details.component";
+import { ShowService } from "./show-list/show.service";
+import { ShowResolver } from "./resolvers/show.resolver";
 
 
 export const ROUTES: Routes = [

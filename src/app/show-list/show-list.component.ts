@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { ShowStore } from "../common/stores/shows.store";
 import { Router } from "@angular/router";
-import { TopBarStore } from "../common/stores/top-bar.store";
+import { ShowStore } from "../stores/shows.store";
+import { TopBarStore } from "../stores/top-bar.store";
 
 @Component({
     selector: 'show',

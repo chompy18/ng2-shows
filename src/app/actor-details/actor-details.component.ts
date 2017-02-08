@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ActorStore } from "../common/stores/actor.store";
 import { Router } from "@angular/router";
+import { ActorStore } from "../stores/actor.store";
 
 @Component({
     selector: 'actor-details',
