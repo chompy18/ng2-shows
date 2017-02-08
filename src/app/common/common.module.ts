@@ -15,7 +15,10 @@ import { ClarityModule } from "clarity-angular";
         HttpModule,
         ClarityModule.forRoot(),
     ],
-    providers: []
+    providers: [],
+    exports: [
+        NavComponent
+    ]
 })
 export class ShowsCommonModule {
 
