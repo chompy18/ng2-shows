@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, OnInit } from "@angular/core";
-import { TopBarStore } from "../stores/top-bar.store";
+import { TopBarOrchestrator } from "../state/top-bar/top-bar.orchestrator";
 
 @Component({
     selector: 'search',
@@ -12,15 +12,15 @@ export class SearchComponent implements OnInit {
     @Output()
     criteriaChanged: EventEmitter<string> = new EventEmitter<string>();
 
-    constructor(private topBarStore: TopBarStore) {
+    constructor(private topBarOrchestrator: TopBarOrchestrator) {
     }
 
     ngOnInit() {
-        this.criteria = this.topBarStore.criteria;
+        this.criteria = this.topBarOrchestrator.store.criteria;
     }
 
     doSearch() {
-        this.topBarStore.setCriteria(this.criteria);
+        this.topBarOrchestrator.store.setCriteria(this.criteria);
         this.criteriaChanged.emit();
     }
 

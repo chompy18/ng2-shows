@@ -1,15 +1,15 @@
-<div *ngIf="showStore.currentShow.image">
+<div *ngIf="showOrchestrator.store.currentShow.image">
     <nav></nav>
     <div *mobxAutorun>
         <div class="row">
             <div class="col-md-5 offset-md-1">
-                <p>{{showStore.currentShow.name}}</p>
-                <p>Genres: <span *ngFor="let genre of showStore.currentShow.genres">{{genre}},</span></p>
-                <p>{{showStore.currentShow.summary | stripTags}}</p>
+                <p>{{showOrchestrator.store.currentShow.name}}</p>
+                <p>Genres: <span *ngFor="let genre of showOrchestrator.store.currentShow.genres">{{genre}},</span></p>
+                <p>{{showOrchestrator.store.currentShow.summary | stripTags}}</p>
             </div>
-            <img class="show-image" [src]="showStore.currentShow.image?.original">
+            <img class="show-image" [src]="showOrchestrator.store.currentShow.image?.original">
         </div>
-        <div class="row offset-md-1 season-item" *ngFor="let season of showStore.currentShowSeasons">
+        <div class="row offset-md-1 season-item" *ngFor="let season of showOrchestrator.store.currentShowSeasons">
             <div *ngIf="season.premiereDate">
                 <img *ngIf="season.image?.medium" [src]="season.image?.medium">
                 <div class="col-md-12">
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="row offset-md-1">
-            <div class="cast-item" *ngFor="let castMember of showStore.currentShowCast" (click)="navigate(castMember)">
+            <div class="cast-item" *ngFor="let castMember of showOrchestrator.store.currentShowCast" (click)="navigate(castMember)">
                 {{castMember.character.name}}<br>
                 <img [src]="castMember.character.image?.medium">
             </div>

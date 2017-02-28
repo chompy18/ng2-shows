@@ -1,7 +1,5 @@
 import { Injectable } from "@angular/core";
 import { observable, action, computed } from "mobx";
-import { Observable } from "rxjs";
-import { ShowService } from "../show-list/show.service";
 
 @Injectable()
 export class ShowStore {
@@ -12,7 +10,7 @@ export class ShowStore {
     @observable
     currentShow: any = {};
 
-    constructor(private showService: ShowService) {
+    constructor() {
     }
 
     @action
@@ -25,25 +23,6 @@ export class ShowStore {
     @action
     setCurrentShow(show: any) {
         this.currentShow = show;
-    }
-
-    @action
-    getShows(name: string) {
-        this.showService.getShows(name)
-            .subscribe(shows => this.setShows(shows));
-    }
-
-    @action
-    getShowById(showId: number): Observable<any> {
-        if (this.currentShow.id === showId) {
-            return Observable.of(this.currentShow);
-        }
-
-        return this.showService.getShowById(showId)
-            .map(show => {
-                this.setCurrentShow(show);
-                return show;
-            })
     }
 
     @computed

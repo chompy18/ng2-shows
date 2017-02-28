@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { ShowStore } from "../stores/shows.store";
-import { TopBarStore } from "../stores/top-bar.store";
+import { ShowsOrchestrator } from "../state/shows/shows.orchestrator";
+import { TopBarOrchestrator } from "../state/top-bar/top-bar.orchestrator";
 
 @Component({
     selector: 'show',
@@ -11,13 +11,13 @@ import { TopBarStore } from "../stores/top-bar.store";
 export class ShowListComponent implements OnInit {
 
     constructor(private router: Router,
-                private showStore: ShowStore,
-                private topBarStore: TopBarStore) {
+                private showOrchestrator: ShowsOrchestrator,
+                private topBarOrchestrator: TopBarOrchestrator) {
     }
 
     ngOnInit() {
-        if (this.topBarStore.criteria !== '') {
-            this.showStore.getShows(this.topBarStore.criteria);
+        if (this.topBarOrchestrator.store.criteria !== '') {
+            this.showOrchestrator.getShows(this.topBarOrchestrator.store.criteria);
         }
     }
 
@@ -26,11 +26,11 @@ export class ShowListComponent implements OnInit {
     }
 
     doSearch() {
-        this.topBarStore.setIsBlocked(false);
-        this.showStore.getShows(this.topBarStore.criteria);
+        this.topBarOrchestrator.store.setIsBlocked(false);
+        this.showOrchestrator.getShows(this.topBarOrchestrator.store.criteria);
     }
 
     setLoggedIn(state) {
-        this.topBarStore.setLoggedInState(state);
+        this.topBarOrchestrator.store.setLoggedInState(state);
     }
 }

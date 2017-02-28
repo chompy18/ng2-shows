@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { ActorStore } from "../stores/actor.store";
+import { ActorOrchestrator } from "../state/actors/actor.orchestrator";
 
 @Component({
     selector: 'actor-details',
@@ -9,12 +9,13 @@ import { ActorStore } from "../stores/actor.store";
 })
 export class ActorDetailsComponent implements OnInit {
 
-    constructor(private router: Router, private actorStore: ActorStore) {
+    constructor(private router: Router,
+                private actorOrchestrator: ActorOrchestrator) {
 
     }
 
     ngOnInit() {
-        this.actorStore.getActorShows();
+        this.actorOrchestrator.getActorShows();
     }
 
     navigate(show: any) {

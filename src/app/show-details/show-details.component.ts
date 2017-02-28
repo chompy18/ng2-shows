@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { ShowStore } from "../stores/shows.store";
-import { ActorStore } from "../stores/actor.store";
+import { ShowsOrchestrator } from "../state/shows/shows.orchestrator";
+import { ActorOrchestrator } from "../state/actors/actor.orchestrator";
 
 @Component({
     selector: 'show-details',
@@ -11,12 +11,12 @@ import { ActorStore } from "../stores/actor.store";
 export class ShowDetailsComponent {
 
     constructor(private router: Router,
-                private showStore: ShowStore,
-                private actorStore: ActorStore) {
+                private showOrchestrator: ShowsOrchestrator,
+                private actorOrchestrator: ActorOrchestrator) {
     }
 
     navigate(castMember: any) {
-        this.actorStore.setActor(castMember.person);
+        this.actorOrchestrator.store.setActor(castMember.person);
         this.router.navigate(['actor', castMember.person.id]);
     }
 }

@@ -3,8 +3,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { ShowListComponent } from "./show-list/show-list.component";
 import { ShowDetailsComponent } from "./show-details/show-details.component";
 import { ActorDetailsComponent } from "./actor-details/actor-details.component";
-import { ShowService } from "./show-list/show.service";
 import { ShowResolver } from "./resolvers/show.resolver";
+import { ShowActivator } from "./resolvers/show.activator";
 
 
 export const ROUTES: Routes = [
@@ -16,7 +16,7 @@ export const ROUTES: Routes = [
     {
         path: 'show/:id',
         component: ShowDetailsComponent,
-        canActivate: [ShowService],
+        canActivate: [ShowActivator],
         resolve: {
             show: ShowResolver
         }

@@ -4,6 +4,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { ClarityModule } from "clarity-angular";
+import { ShowsStateModule } from "../state/shows/shows-state.module";
+import { ActorsStateModule } from "../state/actors/actors-state.module";
+import { TopBarStateModule } from "../state/top-bar/top-bar-state.module";
 
 @NgModule({
     declarations: [
@@ -14,6 +17,9 @@ import { ClarityModule } from "clarity-angular";
         FormsModule,
         HttpModule,
         ClarityModule.forRoot(),
+        ShowsStateModule,
+        ActorsStateModule,
+        TopBarStateModule
     ],
     providers: [],
     exports: [
