@@ -1,14 +1,14 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { Ng2MobxModule } from "ng2-mobx";
 import { ShowService } from "./show.service";
 import { ShowStore } from "./shows.store";
 import { ShowsOrchestrator } from "./shows.orchestrator";
+import {MobxAngularModule} from "mobx-angular";
 
 @NgModule({
     imports: [
         CommonModule,
-        Ng2MobxModule
+        MobxAngularModule
     ],
     providers: [
         ShowStore,
@@ -23,7 +23,7 @@ export class ShowsStateModule {
 @NgModule({
     imports: [
         CommonModule,
-        Ng2MobxModule
+        MobxAngularModule
     ],
     providers: [
         ShowStore,

@@ -1,13 +1,13 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { Ng2MobxModule } from "ng2-mobx";
 import { TopBarStore } from "./top-bar.store";
 import { TopBarOrchestrator } from "./top-bar.orchestrator";
+import {MobxAngularModule} from "mobx-angular";
 
 @NgModule({
     imports: [
         CommonModule,
-        Ng2MobxModule
+        MobxAngularModule
     ],
     providers: [
         TopBarStore,
@@ -21,7 +21,7 @@ export class TopBarStateModule {
 @NgModule({
     imports: [
         CommonModule,
-        Ng2MobxModule
+        MobxAngularModule
     ],
     providers: [
         TopBarStore,

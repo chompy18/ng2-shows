@@ -10,10 +10,9 @@ import { ShowResolver } from "./resolvers/show.resolver";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
-import { Ng2MobxModule } from "ng2-mobx";
 import { NgPipesModule } from "ngx-pipes";
-import { ClarityModule } from "clarity-angular";
 import { ShowActivator } from "./resolvers/show.activator";
+import {MobxAngularModule} from "mobx-angular";
 
 @NgModule({
     declarations: [
@@ -27,9 +26,8 @@ import { ShowActivator } from "./resolvers/show.activator";
         BrowserModule,
         FormsModule,
         HttpModule,
-        Ng2MobxModule,
+        MobxAngularModule,
         NgPipesModule,
-        ClarityModule.forRoot(),
         ShowsCommonModule,
         ROUTING
     ],
