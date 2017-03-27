@@ -11,7 +11,7 @@ import { ActorOrchestrator } from "../state/actors/actor.orchestrator";
 export class ShowDetailsComponent {
 
     constructor(private router: Router,
-                private showOrchestrator: ShowsOrchestrator,
+                public showOrchestrator: ShowsOrchestrator,
                 private actorOrchestrator: ActorOrchestrator) {
     }
 
