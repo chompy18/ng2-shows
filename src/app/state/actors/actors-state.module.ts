@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ActorStore } from "./actor.store";
-import { ActorService } from "./actor.service";
+import { ActorService, ActorServiceMock } from "./actor.service";
 import { ActorOrchestrator } from "./actor.orchestrator";
 import {MobxAngularModule} from "mobx-angular";
 
@@ -27,7 +27,7 @@ export class ActorsStateModule {
     ],
     providers: [
         ActorStore,
-        ActorService,
+        {provide: ActorService, useClass: ActorServiceMock},
         ActorOrchestrator
     ]
 })

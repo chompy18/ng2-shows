@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
-import { Observable } from "rxjs";
+import { Observable,  } from "rxjs";
 
 @Injectable()
 export class ActorService {
@@ -15,5 +15,27 @@ export class ActorService {
         const url = this.BASE_URL + 'people/' + actorId + '/castcredits?embed=show';
         return this.http.get(url)
             .map(res => res.json());
+    }
+}
+
+@Injectable()
+export class ActorServiceMock {
+    private testResponse: any;
+    private testError: any;
+
+    public setTestResponse(actorShows: any) {
+        this.testResponse = actorShows;
+    }
+
+    public setTestError(err: any) {
+        this.testError = err;
+    }
+
+    getActorShows(actorId: number): Observable<any> {
+        if (this.testError) {
+            return Observable.of(this.testError);
+        }
+
+        return Observable.of(this.testResponse);
     }
 }

@@ -12,7 +12,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { NgPipesModule } from "ngx-pipes";
 import { ShowActivator } from "./resolvers/show.activator";
-import {MobxAngularModule} from "mobx-angular";
+import { MobxAngularModule } from "mobx-angular";
 
 @NgModule({
     declarations: [
