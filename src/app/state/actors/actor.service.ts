@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
-import { Observable,  } from "rxjs";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class ActorService {
 
-    BASE_URL: string = 'https://api.tvmaze.com/';
+    private BASE_URL: string = 'https://api.tvmaze.com/';
 
     constructor(private http: Http) {
 
@@ -18,7 +18,6 @@ export class ActorService {
     }
 }
 
-@Injectable()
 export class ActorServiceMock {
     private testResponse: any;
     private testError: any;

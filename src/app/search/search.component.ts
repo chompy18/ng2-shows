@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
     @Output()
     criteriaChanged: EventEmitter<string> = new EventEmitter<string>();
 
-    constructor(private topBarOrchestrator: TopBarOrchestrator) {
+    constructor(public topBarOrchestrator: TopBarOrchestrator) {
     }
 
     ngOnInit() {

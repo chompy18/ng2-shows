@@ -11,9 +11,9 @@ import {MobxAngularModule} from "mobx-angular";
         MobxAngularModule
     ],
     providers: [
+        ActorOrchestrator,
         ActorStore,
         ActorService,
-        ActorOrchestrator
     ]
 })
 export class ActorsStateModule {
@@ -26,9 +26,9 @@ export class ActorsStateModule {
         MobxAngularModule
     ],
     providers: [
+        ActorOrchestrator,
         ActorStore,
         {provide: ActorService, useClass: ActorServiceMock},
-        ActorOrchestrator
     ]
 })
 export class ActorsStateTestModule {
