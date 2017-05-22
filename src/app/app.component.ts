@@ -1,17 +1,23 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { useStrict } from "mobx";
-
-useStrict(true);
 
 @Component({
-    selector: 'my-app',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  criteria: string;
+  isLoggedIn: boolean;
 
-    constructor(private router: Router) {
-    }
+  constructor() {
+    this.criteria = "Bad";
+    this.isLoggedIn = false;
+  }
+
+  handleStateChange(data) {
+    this.criteria = data.criteria;
+    this.isLoggedIn = data.isLoggedIn;
+    console.log(`state: [criteria: ${this.criteria}], [isLoggedIn: ${this.isLoggedIn}]`);
+  }
 
 }

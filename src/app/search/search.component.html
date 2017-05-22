@@ -1,6 +1,0 @@
-<div class="row offset-md-1 main">
-    <input [(ngModel)]="criteria" type="text" placeholder="search for a show" (keydown.enter)="doSearch()">
-    <button type="submit" class="btn btn-success-outline"
-            [disabled]="!topBarOrchestrator.store.isLoggedIn"
-            (click)="doSearch()">search</button>
-</div>
