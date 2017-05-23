@@ -6,6 +6,7 @@ import { HttpModule } from "@angular/http";
 import { AppComponent } from "./app.component";
 import { ShowListComponent } from "./show-list/show-list.component";
 import { HeaderModule } from "./header/header.module";
+import { ShowTileComponent } from "./show-list/show-tile/show-tile.component";
 
 @NgModule({
     imports: [
@@ -17,6 +18,7 @@ import { HeaderModule } from "./header/header.module";
     declarations: [
         AppComponent,
         ShowListComponent,
+        ShowTileComponent,
     ],
     providers: [],
     bootstrap: [AppComponent]
