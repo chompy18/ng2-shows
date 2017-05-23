@@ -1,28 +1,25 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: 'header.component.html',
-  styleUrls: ['header.component.scss'],
+    selector: 'app-header',
+    templateUrl: 'header.component.html',
+    styleUrls: ['header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  @Input() criteria: string;
-  @Input() isLoggedIn: boolean;
+    @Input() criteria: string;
+    @Input() isLoggedIn: boolean;
 
-  @Output() stateChange = new EventEmitter<any>();
+    @Output() stateChange = new EventEmitter<any>();
 
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
-
-  emit() {
-    this.stateChange.emit({
-      criteria: this.criteria,
-      isLoggedIn: this.isLoggedIn
-    });
-  }
+    emit() {
+        this.stateChange.emit({
+            criteria: this.criteria,
+            isLoggedIn: this.isLoggedIn
+        });
+    }
 }

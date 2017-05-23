@@ -1,7 +1,8 @@
 <div class="topbar row offset-md-1">
-  <app-search class="col-md-5" [criteria]="criteria" (criteriaChange)="criteria = $event; emit();"></app-search>
-  <div class="col-md-5 toggle-switch">
-    <input #loggedIn type="checkbox" id="toggle_1" [checked]="isLoggedIn" (change)="isLoggedIn = loggedIn.checked; emit();">
-    <label for="toggle_1">Act as logged in</label>
-  </div>
+    <app-search class="col-md-5" [criteria]="criteria" (criteriaChange)="criteria = $event; emit();"></app-search>
+    <div class="col-md-5 toggle-switch">
+        <input #loggedIn type="checkbox" id="toggle_1" [checked]="isLoggedIn"
+               (change)="isLoggedIn = loggedIn.checked; emit();">
+        <label for="toggle_1">Act as logged in</label>
+    </div>
 </div>

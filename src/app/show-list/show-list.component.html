@@ -1,7 +1,7 @@
 <div class="row offset-md-1">
-  <div class="show" *ngFor="let show of shows" (click)="navigate(show)">
-    <img [src]="show.image.medium"><br>
-    <span>{{show.name}}</span><br>
-    <span>{{show.genres.join(',')}}, </span>
-  </div>
+    <div class="show" *ngFor="let show of shows" (click)="navigate(show)">
+        <img [src]="show?.image.medium"><br>
+        <span>{{show?.name}}</span><br>
+        <span>{{show?.genres.join(',')}} </span>
+    </div>
 </div>

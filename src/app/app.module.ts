@@ -8,17 +8,18 @@ import { ShowListComponent } from "./show-list/show-list.component";
 import { HeaderModule } from "./header/header.module";
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    HeaderModule,
-  ],
-  declarations: [
-    AppComponent,
-    ShowListComponent,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        HeaderModule,
+    ],
+    declarations: [
+        AppComponent,
+        ShowListComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

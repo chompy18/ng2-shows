@@ -1,20 +1,30 @@
-import { Component } from "@angular/core";
-import { data } from "./show-list.data";
+import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
+import { ShowListService } from "./show-list.service";
 
 @Component({
-  selector: 'app-show-list',
-  templateUrl: 'show-list.component.html',
-  styleUrls: ['show-list.component.scss']
+    selector: 'app-show-list',
+    templateUrl: 'show-list.component.html',
+    styleUrls: ['show-list.component.scss'],
+    providers: [ShowListService],
 })
-export class ShowListComponent {
-  shows: any[];
+export class ShowListComponent implements OnChanges {
 
-  constructor() {
-    this.shows = data.map(item => item.show);
-  }
+    @Input() selectedShow: string;
 
-  navigate(show) {
-      console.log(`selected show: ${show.name}`);
-  }
+    shows: any[];
+
+    constructor(private showListService: ShowListService) {
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        this.showListService.getShows(changes.selectedShow.currentValue)
+            .subscribe(res => {
+                this.shows = res.map(item => item.show);
+            });
+    }
+
+    navigate(show) {
+        console.log(`selected show: ${show.name}`);
+    }
 
 }
