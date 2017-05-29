@@ -1,8 +1,9 @@
 <div class="topbar row offset-md-1">
-    <app-search class="col-md-5" [criteria]="criteria" (criteriaChange)="criteria = $event; emit();"></app-search>
+    <app-search class="col-md-5" [criteria]="headerStore.criteriaObservable | async"
+                (criteriaChange)="headerStore.criteria = $event"></app-search>
     <div class="col-md-5 toggle-switch">
-        <input #loggedIn type="checkbox" id="toggle_1" [checked]="isLoggedIn"
-               (change)="isLoggedIn = loggedIn.checked; emit();">
+        <input #loggedIn type="checkbox" id="toggle_1" [checked]="headerStore.isLoggedInObservable | async"
+               (change)="headerStore.isLoggedIn = loggedIn.checked">
         <label for="toggle_1">Act as logged in</label>
     </div>
 </div>

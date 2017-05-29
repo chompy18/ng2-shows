@@ -1,23 +1,32 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { HeaderStore } from "./state/header.store";
+import { ShowsStore } from "./state/shows.store";
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-    criteria: string;
-    isLoggedIn: boolean;
+export class AppComponent implements OnInit {
 
-    constructor() {
-        this.criteria = "Bad";
-        this.isLoggedIn = false;
+    constructor(private headerStore: HeaderStore,
+                private showsStore: ShowsStore) {
     }
 
-    handleStateChange(data) {
-        this.criteria = data.criteria;
-        this.isLoggedIn = data.isLoggedIn;
-        console.log(`state: [criteria: ${this.criteria}], [isLoggedIn: ${this.isLoggedIn}]`);
+    ngOnInit() {
+        this.headerStore.isLoggedIn = true;
+
+        this.headerStore.isLoggedInObservable.subscribe(
+            isLoggedIn => console.log(`is logged in: ${isLoggedIn}`)
+        );
+
+        this.headerStore.criteriaObservable.subscribe(
+            criteria => console.log(`criteria: ${criteria}`)
+        );
+
+        this.showsStore.showsObservable.subscribe(
+            shows => console.log(`shows found: ${shows.length}`)
+        );
     }
 
 }

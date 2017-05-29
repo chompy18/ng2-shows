@@ -13,6 +13,10 @@ export class ShowListService {
     }
 
     getShows(showName: string): Observable<any> {
+        if (showName === '') {
+            return Observable.of([]);
+        }
+        
         const url = this.BASE_URL + 'search/shows?q=' + encodeURI(showName);
         return this.http.get(url)
             .map(res => res.json())

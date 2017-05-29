@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component } from "@angular/core";
+import { HeaderStore } from "../state/header.store";
 
 @Component({
     selector: 'app-header',
@@ -7,19 +8,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 })
 export class HeaderComponent {
 
-    @Input() criteria: string;
-    @Input() isLoggedIn: boolean;
-
-    @Output() stateChange = new EventEmitter<any>();
-
-
-    constructor() {
+    constructor(private headerStore: HeaderStore) {
     }
 
-    emit() {
-        this.stateChange.emit({
-            criteria: this.criteria,
-            isLoggedIn: this.isLoggedIn
-        });
-    }
 }

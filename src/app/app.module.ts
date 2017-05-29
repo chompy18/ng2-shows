@@ -8,13 +8,17 @@ import { ShowListComponent } from "./show-list/show-list.component";
 import { HeaderModule } from "./header/header.module";
 import { ShowTileComponent } from "./show-list/show-tile/show-tile.component";
 import { ArrayJoinPipe } from "./common/pipes/array-join.pipe";
+import { routing } from "./app.routes";
+import { StoreModule } from "./state/store.module";
 
 @NgModule({
     imports: [
         BrowserModule,
+        routing,
         FormsModule,
         HttpModule,
         HeaderModule,
+        StoreModule,
     ],
     declarations: [
         AppComponent,
