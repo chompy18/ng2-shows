@@ -1,11 +1,18 @@
 import { RouterModule, Routes } from "@angular/router";
 import { ShowListComponent } from "./show-list/show-list.component";
-
-export const SHOW_LIST: string = 'show-list';
+import { ShowDetails } from "./show-details/show-details.component";
+import { ShowDetailsGuard } from "./common/guards/can-show-details.guard";
 
 const routes: Routes = [
-    {path: '', redirectTo: SHOW_LIST, pathMatch: 'full'},
-    {path: SHOW_LIST, component: ShowListComponent}
+    {path: '', redirectTo: 'show-list', pathMatch: 'full'},
+    {path: 'show-list', component: ShowListComponent},
+    {
+        path: 'show-details/:id',
+        component: ShowDetails,
+        canActivate: [
+            ShowDetailsGuard
+        ]
+    }
 ];
 
 export const routing = RouterModule.forRoot(routes);

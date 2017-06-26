@@ -1,6 +1,6 @@
 <div class="topbar row offset-md-1">
     <app-search class="col-md-5" [criteria]="headerStore.criteriaObservable | async"
-                (criteriaChange)="headerStore.criteria = $event"></app-search>
+                (criteriaChange)="handleCriteriaChanged($event)"></app-search>
     <div class="col-md-5 toggle-switch">
         <input #loggedIn type="checkbox" id="toggle_1" [checked]="headerStore.isLoggedInObservable | async"
                (change)="headerStore.isLoggedIn = loggedIn.checked">

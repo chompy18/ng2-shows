@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { HeaderStore } from "../state/header.store";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-header',
@@ -8,7 +9,13 @@ import { HeaderStore } from "../state/header.store";
 })
 export class HeaderComponent {
 
-    constructor(private headerStore: HeaderStore) {
+    constructor(private headerStore: HeaderStore,
+                private router: Router) {
+    }
+
+    handleCriteriaChanged(criteria: string) {
+        this.headerStore.criteria = criteria;
+        this.router.navigate(['show-list']);
     }
 
 }

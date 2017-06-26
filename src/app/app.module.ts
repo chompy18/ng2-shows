@@ -10,6 +10,9 @@ import { ShowTileComponent } from "./show-list/show-tile/show-tile.component";
 import { ArrayJoinPipe } from "./common/pipes/array-join.pipe";
 import { routing } from "./app.routes";
 import { StoreModule } from "./state/store.module";
+import { ShowDetails } from "./show-details/show-details.component";
+import { ShowDetailsGuard } from "./common/guards/can-show-details.guard";
+import { NgPipesModule } from "ngx-pipes";
 
 @NgModule({
     imports: [
@@ -19,14 +22,18 @@ import { StoreModule } from "./state/store.module";
         HttpModule,
         HeaderModule,
         StoreModule,
+        NgPipesModule,
     ],
     declarations: [
         AppComponent,
         ShowListComponent,
         ShowTileComponent,
+        ShowDetails,
         ArrayJoinPipe,
     ],
-    providers: [],
+    providers: [
+        ShowDetailsGuard
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,27 @@
+<div *ngIf="show.image">
+    <div>
+        <div class="row">
+            <div class="col-md-5 offset-md-1">
+                <p>{{show.name}}</p>
+                <p>Genres: <span *ngFor="let genre of show.genres">{{genre}},</span></p>
+                <p>{{show.summary | stripTags}}</p>
+            </div>
+            <img class="show-image" [src]="show.image?.original">
+        </div>
+        <div class="row offset-md-1 season-item" *ngFor="let season of seasons">
+            <div *ngIf="season.premiereDate">
+                <img *ngIf="season.image?.medium" [src]="season.image?.medium">
+                <div class="col-md-12">
+                    <span>Season {{season.number}}: {{season.name}} ({{season.premiereDate}} - {{season.endDate}}), {{season.episodeOrder}} Episodes</span>
+                    <p *ngIf="season.summary">{{season.summary | stripTags}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row offset-md-1">
+            <div class="cast-item" *ngFor="let castMember of cast">
+                {{castMember.character.name}}<br>
+                <img [src]="castMember.character.image?.medium">
+            </div>
+        </div>
+    </div>
+</div>

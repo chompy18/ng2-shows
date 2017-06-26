@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ShowsStore } from "../state/shows.store";
 import { ShowListService } from "./show-list.service";
 import { HeaderStore } from "../state/header.store";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-show-list',
@@ -13,7 +14,8 @@ export class ShowListComponent implements OnInit {
 
     shows: any[];
 
-    constructor(private showsStore: ShowsStore,
+    constructor(private router: Router,
+                private showsStore: ShowsStore,
                 private headerStore: HeaderStore,
                 private showListService: ShowListService) {
     }
@@ -36,7 +38,7 @@ export class ShowListComponent implements OnInit {
     }
 
     navigate(show) {
-        console.log(`selected show: ${show.name}`);
+        this.router.navigate(['show-details', show.id]);
     }
 
 }
